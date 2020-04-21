@@ -1,10 +1,15 @@
 // code away!
+require('dotenv').config();
+
 const express = require('express');
 const postRouter = require('./posts/postRouter');
 const userRouter = require('./users/userRouter');
 
 const server = express();
-const port = 5000;
+// const port = 5000;
+const port = process.env.PORT;
+
+
 const logger = require('./middleware/logger');
 
 server.use(express.json());
